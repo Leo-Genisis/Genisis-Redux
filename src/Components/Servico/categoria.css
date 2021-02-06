@@ -1,0 +1,13 @@
+.categorias {
+    list-style: none;
+    padding-left: 25px;
+}
+
+.categorias>li{
+    margin-bottom: 5px;
+}
+
+.categorias>li:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}

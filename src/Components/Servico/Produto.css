@@ -1,0 +1,19 @@
+figure>img{
+    width: 250px;
+    height: 225px;
+    position: relative;
+
+}
+
+figcaption{
+    position: relative;
+    text-align: justify;
+    font-weight: bolder;
+    padding: 5px;
+    width: 150px;
+    visibility: hidden;
+}
+
+.preco-prod{
+    color: red;
+}
