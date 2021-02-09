@@ -1,11 +1,12 @@
 import React from 'react';
-import{ useState, useEffect} from 'react';
+import{ useState, useEffect, lazy, Suspense} from 'react';
 import {Container, Row} from 'react-bootstrap';
 //import store from '../store';
 
-import Servico from '../Components/Servico/index'
+
 import Categorias from '../Components/Servico/categoria';
 import './Servicos.css';
+const Servico = lazy(() => import('../Components/Servico/index'));
 
 export default function Servicos(){
 
@@ -34,7 +35,10 @@ export default function Servicos(){
              < Categorias />
             </Row>     
            <Row>
-             {servicos && servicos.map(item => <Servico key={item.idserv} img={item.img} nome={item.descricao} preco={item.preco} categoria={item.desenvolvimento} />)} 
+               <Suspense fallback={<p>Carregando...</p>}>
+                 {servicos && servicos.map(item => <Servico key={item.idserv} img={item.img} nome={item.descricao} preco={item.preco} categoria={item.desenvolvimento} />)}   
+               </Suspense>
+             
            </Row>
         </Container>
         
